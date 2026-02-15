@@ -6,6 +6,11 @@
   {% seo %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
+  <!-- Google Fonts: Syne (display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -13,11 +18,18 @@
       theme: {
         extend: {
           colors: {
-            primary: '#2d6a4f',
-            'primary-dark': '#1b4332',
-            secondary: '#d4a373',
-            'secondary-dark': '#b08050',
+            cream: '#f5eed6',
+            'cream-dark': '#ebe3c7',
+            mustard: '#d4912a',
+            'mustard-dark': '#b87a1e',
+            coral: '#c9503c',
+            'coral-dark': '#a83d2c',
+            sage: '#5a7a5a',
+            'sage-dark': '#476047',
             dark: '#1b1b1b',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -66,7 +78,7 @@
 
   {% feed_meta %}
 </head>
-<body class="flex flex-col min-h-screen bg-white text-dark">
+<body class="flex flex-col min-h-screen bg-cream text-dark">
   {% if site.gtm_id and site.gtm_id != "" %}
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -100,6 +112,19 @@
         menuIconClose.classList.toggle('hidden');
       });
     }
+  </script>
+
+  <!-- Scroll reveal -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

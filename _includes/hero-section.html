@@ -1,21 +1,38 @@
-<section class="relative bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-32">
-  <div class="absolute inset-0 bg-black/20"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-      Fresh From Our Farm<br class="hidden sm:block"> to Your Table
-    </h1>
-    <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10">
-      At {{ site.title }}, we grow and harvest the freshest produce, seasonal specialties, and homemade goods — all available at our farm stand for you and your family.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#products" class="inline-flex items-center justify-center space-x-2 bg-secondary text-dark font-semibold px-8 py-3 rounded-lg hover:bg-secondary-dark transition-colors text-lg">
-        <i data-lucide="shopping-basket" class="w-5 h-5"></i>
-        <span>See What's Fresh</span>
-      </a>
-      <a href="#contact" class="inline-flex items-center justify-center space-x-2 bg-white/10 text-white border-2 border-white/30 font-semibold px-8 py-3 rounded-lg hover:bg-white/20 transition-colors text-lg">
-        <i data-lucide="map-pin" class="w-5 h-5"></i>
-        <span>Visit Our Stand</span>
-      </a>
+<section class="relative bg-cream overflow-hidden border-b-[3px] border-dark">
+  <div class="grain-overlay"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
+    <div class="text-center">
+      <!-- Top label -->
+      <div class="hero-reveal" style="animation-delay: 0s">
+        <div class="flex items-center justify-center space-x-3 mb-8">
+          <span class="w-8 h-[2px] bg-dark/40"></span>
+          <span class="font-display font-bold text-[11px] uppercase tracking-[0.35em] text-dark/60">Family-Owned Farm Stand</span>
+          <span class="w-8 h-[2px] bg-dark/40"></span>
+        </div>
+      </div>
+
+      <!-- Giant stacked text -->
+      <h1 class="font-display font-extrabold uppercase leading-[0.88] tracking-tight">
+        <span class="hero-reveal block text-[clamp(3.5rem,12vw,10rem)] text-dark" style="animation-delay: 0.1s">Fresh</span>
+        <span class="hero-reveal block text-[clamp(3.5rem,12vw,10rem)] text-sage" style="animation-delay: 0.2s">From Our</span>
+        <span class="hero-reveal block text-[clamp(3.5rem,12vw,10rem)] text-coral" style="animation-delay: 0.3s">Farm</span>
+      </h1>
+
+      <p class="hero-reveal mt-8 md:mt-10 text-lg md:text-xl text-dark/50 max-w-md mx-auto leading-relaxed" style="animation-delay: 0.45s">
+        Locally grown produce, farm-fresh eggs, and small-batch kombucha — direct from our fields to your table.
+      </p>
+
+      <div class="hero-reveal mt-10 md:mt-12 flex flex-col sm:flex-row gap-4 justify-center" style="animation-delay: 0.6s">
+        <a href="#products" class="inline-flex items-center justify-center space-x-3 bg-mustard text-white font-display font-bold uppercase tracking-wider text-sm px-8 py-4 border-[3px] border-dark hover:bg-mustard-dark transition-colors">
+          <i data-lucide="shopping-basket" class="w-5 h-5"></i>
+          <span>See What's Fresh</span>
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center space-x-3 bg-transparent text-dark font-display font-bold uppercase tracking-wider text-sm px-8 py-4 border-[3px] border-dark hover:bg-dark hover:text-cream transition-colors">
+          <i data-lucide="map-pin" class="w-5 h-5"></i>
+          <span>Visit Our Stand</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

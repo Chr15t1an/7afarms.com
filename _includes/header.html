@@ -1,40 +1,39 @@
-<header class="bg-white shadow-sm sticky top-0 z-50">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <!-- Logo / Site Name -->
-      <a href="{{ '/' | relative_url }}" class="flex items-center space-x-2">
-        <i data-lucide="leaf" class="w-8 h-8 text-primary"></i>
-        <span class="text-xl font-bold text-primary">{{ site.title }}</span>
+<header class="bg-cream border-b-[3px] border-dark sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-3">
+      <!-- Logo -->
+      <a href="{{ '/' | relative_url }}" class="flex items-center hover:opacity-80 transition-opacity">
+        <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="{{ site.title }}" class="h-12 sm:h-14 w-auto">
       </a>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
-        <a href="{{ '/' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium">Home</a>
-        <a href="{{ '/#products' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium">Products</a>
-        <a href="{{ '/about/' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium">About</a>
-        <a href="{{ '/#contact' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium">Contact</a>
-        <a href="tel:{{ site.phone_raw }}" class="inline-flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors">
+        <a href="{{ '/' | relative_url }}" class="font-display text-lg tracking-wider text-dark hover:text-coral transition-colors">Home</a>
+        <a href="{{ '/#products' | relative_url }}" class="font-display text-lg tracking-wider text-dark hover:text-coral transition-colors">Products</a>
+        <a href="{{ '/about/' | relative_url }}" class="font-display text-lg tracking-wider text-dark hover:text-coral transition-colors">About</a>
+        <a href="{{ '/#contact' | relative_url }}" class="font-display text-lg tracking-wider text-dark hover:text-coral transition-colors">Contact</a>
+        <a href="tel:{{ site.phone_raw }}" class="inline-flex items-center space-x-2 bg-sage text-white px-5 py-2.5 font-display text-lg tracking-wider hover:bg-sage-dark transition-colors border-[3px] border-dark">
           <i data-lucide="phone" class="w-4 h-4"></i>
           <span>{{ site.phone }}</span>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden p-2 text-dark hover:text-primary" aria-label="Toggle menu">
+      <button id="mobile-menu-button" class="md:hidden p-2 text-dark hover:text-coral" aria-label="Toggle menu">
         <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
         <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col space-y-3">
-        <a href="{{ '/' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium py-2">Home</a>
-        <a href="{{ '/#products' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium py-2">Products</a>
-        <a href="{{ '/about/' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium py-2">About</a>
-        <a href="{{ '/#contact' | relative_url }}" class="text-dark hover:text-primary transition-colors font-medium py-2">Contact</a>
-        <a href="tel:{{ site.phone_raw }}" class="inline-flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors">
-          <i data-lucide="phone" class="w-4 h-4"></i>
+    <div id="mobile-menu" class="hidden md:hidden pb-6">
+      <div class="flex flex-col space-y-1 border-t-[3px] border-dark pt-4">
+        <a href="{{ '/' | relative_url }}" class="font-display text-2xl tracking-wider text-dark hover:text-coral transition-colors py-3">Home</a>
+        <a href="{{ '/#products' | relative_url }}" class="font-display text-2xl tracking-wider text-dark hover:text-coral transition-colors py-3">Products</a>
+        <a href="{{ '/about/' | relative_url }}" class="font-display text-2xl tracking-wider text-dark hover:text-coral transition-colors py-3">About</a>
+        <a href="{{ '/#contact' | relative_url }}" class="font-display text-2xl tracking-wider text-dark hover:text-coral transition-colors py-3">Contact</a>
+        <a href="tel:{{ site.phone_raw }}" class="inline-flex items-center justify-center space-x-2 bg-sage text-white px-5 py-3 font-display text-2xl tracking-wider hover:bg-sage-dark transition-colors border-[3px] border-dark mt-2">
+          <i data-lucide="phone" class="w-5 h-5"></i>
           <span>{{ site.phone }}</span>
         </a>
       </div>

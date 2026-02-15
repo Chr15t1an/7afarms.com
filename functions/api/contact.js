@@ -64,8 +64,8 @@ export async function onRequestPost(context) {
           subject: `New Contact Form Submission from ${name}`,
         }],
         from: {
-          email: 'noreply@7afarms.com',
-          name: '7A Farms Website',
+          email: 'noreply@7afarm.com',
+          name: '7A Farm Website',
         },
         reply_to: {
           email: email,

@@ -1,20 +1,20 @@
-title: "7A Farms"
+title: "7A Farm"
 tagline: "Fresh From Our Farm to Your Table"
-description: "7A Farms is a family-owned farm stand offering fresh, locally grown produce, seasonal specialties, and homemade goods direct from our fields to your table."
+description: "7A Farm is a family-owned farm stand offering fresh, locally grown produce, seasonal specialties, and homemade goods direct from our fields to your table."
 
-url: "https://www.7afarms.com"
+url: "https://www.7afarm.com"
 baseurl: ""
 
 # Business info (update with real details)
 phone: "(555) 123-4567"
 phone_raw: "+15551234567"
-email: "hello@7afarms.com"
+email: "hello@7afarm.com"
 address:
   street: "1234 Country Road"
-  city: "Anytown"
-  state: "TX"
-  zip: "75000"
-  full: "1234 Country Road, Anytown, TX 75000"
+  city: "Kansas City"
+  state: "MO"
+  zip: "64101"
+  full: "1234 Country Road, Kansas City, MO 64101"
 
 # Hours (update with real hours)
 hours:
@@ -27,8 +27,8 @@ hours:
 
 # Social media (update with real links)
 social:
-  facebook: "https://facebook.com/7afarms"
-  instagram: "https://instagram.com/7afarms"
+  facebook: "https://facebook.com/7afarm"
+  instagram: "https://instagram.com/7afarm"
 
 # Google Tag Manager (set via env or replace)
 gtm_id: ""

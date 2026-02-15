@@ -1,58 +1,56 @@
-<section id="contact" class="py-16 md:py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Get in Touch</h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Have a question about what's in season? Want to place a bulk order? We'd love to hear from you.
-      </p>
+<section id="contact" class="bg-dark text-cream py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 md:mb-16 reveal-on-scroll">
+      <h2 class="font-display font-extrabold text-4xl md:text-6xl uppercase tracking-tight text-cream">Get in Touch</h2>
+      <p class="mt-4 text-lg text-cream/50 max-w-xl mx-auto">Have a question? Want to place an order? We'd love to hear from you.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal-on-scroll">
       <!-- Contact Info -->
       <div class="space-y-8">
         <!-- Phone -->
         <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i data-lucide="phone" class="w-6 h-6 text-primary"></i>
+          <div class="w-12 h-12 bg-sage border-2 border-cream/20 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="phone" class="w-5 h-5 text-white"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-dark mb-1">Phone</h3>
-            <a href="tel:{{ site.phone_raw }}" class="text-primary hover:text-primary-dark transition-colors">{{ site.phone }}</a>
+            <h3 class="font-display font-bold uppercase tracking-wider text-sm text-cream mb-1">Phone</h3>
+            <a href="tel:{{ site.phone_raw }}" class="text-mustard hover:text-mustard-dark transition-colors text-lg">{{ site.phone }}</a>
           </div>
         </div>
 
         <!-- Email -->
         <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i data-lucide="mail" class="w-6 h-6 text-primary"></i>
+          <div class="w-12 h-12 bg-sage border-2 border-cream/20 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="mail" class="w-5 h-5 text-white"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-dark mb-1">Email</h3>
-            <a href="mailto:{{ site.email }}" class="text-primary hover:text-primary-dark transition-colors">{{ site.email }}</a>
+            <h3 class="font-display font-bold uppercase tracking-wider text-sm text-cream mb-1">Email</h3>
+            <a href="mailto:{{ site.email }}" class="text-mustard hover:text-mustard-dark transition-colors text-lg">{{ site.email }}</a>
           </div>
         </div>
 
         <!-- Address -->
         <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i data-lucide="map-pin" class="w-6 h-6 text-primary"></i>
+          <div class="w-12 h-12 bg-sage border-2 border-cream/20 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-dark mb-1">Location</h3>
-            <p class="text-gray-600">{{ site.address.full }}</p>
+            <h3 class="font-display font-bold uppercase tracking-wider text-sm text-cream mb-1">Location</h3>
+            <p class="text-cream/60 text-lg">{{ site.address.full }}</p>
           </div>
         </div>
 
         <!-- Hours -->
         <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i data-lucide="clock" class="w-6 h-6 text-primary"></i>
+          <div class="w-12 h-12 bg-sage border-2 border-cream/20 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="clock" class="w-5 h-5 text-white"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-dark mb-1">Hours</h3>
-            <div class="text-gray-600 space-y-1">
+            <h3 class="font-display font-bold uppercase tracking-wider text-sm text-cream mb-1">Hours</h3>
+            <div class="text-cream/60 space-y-1">
               {% for h in site.hours %}
-              <p><span class="font-medium">{{ h.day }}:</span> {{ h.time }}</p>
+              <p><span class="text-cream">{{ h.day }}:</span> {{ h.time }}</p>
               {% endfor %}
             </div>
           </div>
@@ -63,14 +61,14 @@
         <div class="flex items-center space-x-4 pt-4">
           {% if site.social.facebook %}
           <a href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer"
-             class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+             class="w-12 h-12 bg-cream/10 border-2 border-cream/20 flex items-center justify-center text-cream hover:bg-mustard hover:border-mustard transition-colors"
              aria-label="Facebook">
             <i data-lucide="facebook" class="w-5 h-5"></i>
           </a>
           {% endif %}
           {% if site.social.instagram %}
           <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer"
-             class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+             class="w-12 h-12 bg-cream/10 border-2 border-cream/20 flex items-center justify-center text-cream hover:bg-coral hover:border-coral transition-colors"
              aria-label="Instagram">
             <i data-lucide="instagram" class="w-5 h-5"></i>
           </a>
@@ -80,7 +78,7 @@
       </div>
 
       <!-- Contact Form -->
-      <div class="bg-white rounded-xl shadow-md p-8 relative">
+      <div class="bg-cream/5 border-2 border-cream/10 p-8 relative">
         {% include contact-form.html %}
       </div>
     </div>

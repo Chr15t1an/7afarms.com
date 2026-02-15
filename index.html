@@ -1,10 +1,36 @@
 ---
 layout: default
-title: "7A Farms — Fresh From Our Farm to Your Table"
-description: "Visit 7A Farms for fresh, locally grown produce, seasonal specialties, and homemade goods. Family-owned farm stand serving our community."
+title: "7A Farm — Fresh From Our Farm to Your Table"
+description: "Visit 7A Farm for fresh, locally grown produce, seasonal specialties, and homemade goods. Family-owned farm stand serving our community."
 ---
 
 {% include hero-section.html %}
+
+<!-- Scrolling marquee -->
+<div class="bg-dark py-3 overflow-hidden border-b-[3px] border-dark">
+  <div class="marquee-track flex whitespace-nowrap">
+    <span class="inline-block font-display font-bold text-cream/70 text-sm uppercase tracking-[0.2em] px-4">
+      Farm Fresh Eggs&ensp;&bull;&ensp;Small-Batch Kombucha&ensp;&bull;&ensp;Locally Grown&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;Farm Fresh Eggs&ensp;&bull;&ensp;Small-Batch Kombucha&ensp;&bull;&ensp;Locally Grown&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;
+    </span>
+    <span class="inline-block font-display font-bold text-cream/70 text-sm uppercase tracking-[0.2em] px-4" aria-hidden="true">
+      Farm Fresh Eggs&ensp;&bull;&ensp;Small-Batch Kombucha&ensp;&bull;&ensp;Locally Grown&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;Farm Fresh Eggs&ensp;&bull;&ensp;Small-Batch Kombucha&ensp;&bull;&ensp;Locally Grown&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;
+    </span>
+  </div>
+</div>
+
 {% include services-section.html %}
 {% include about-section.html %}
+
+<!-- Second marquee before contact -->
+<div class="bg-sage py-3 overflow-hidden">
+  <div class="marquee-track flex whitespace-nowrap" style="animation-direction: reverse;">
+    <span class="inline-block font-display font-bold text-white/70 text-sm uppercase tracking-[0.2em] px-4">
+      Visit Our Stand&ensp;&bull;&ensp;Open Mon&ndash;Sat&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;{{ site.address.city }}, {{ site.address.state }}&ensp;&bull;&ensp;Visit Our Stand&ensp;&bull;&ensp;Open Mon&ndash;Sat&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;{{ site.address.city }}, {{ site.address.state }}&ensp;&bull;&ensp;
+    </span>
+    <span class="inline-block font-display font-bold text-white/70 text-sm uppercase tracking-[0.2em] px-4" aria-hidden="true">
+      Visit Our Stand&ensp;&bull;&ensp;Open Mon&ndash;Sat&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;{{ site.address.city }}, {{ site.address.state }}&ensp;&bull;&ensp;Visit Our Stand&ensp;&bull;&ensp;Open Mon&ndash;Sat&ensp;&bull;&ensp;Family Owned&ensp;&bull;&ensp;{{ site.address.city }}, {{ site.address.state }}&ensp;&bull;&ensp;
+    </span>
+  </div>
+</div>
+
 {% include contact-section.html %}

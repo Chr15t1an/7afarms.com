@@ -1,48 +1,45 @@
-<section id="about" class="py-16 md:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section id="about" class="bg-cream py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text Content -->
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Our Story</h2>
-        <p class="text-lg text-gray-600 mb-6">
+      <div class="reveal-on-scroll">
+        <span class="font-display font-bold text-xs uppercase tracking-[0.3em] text-sage mb-4 block">Our Story</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-5xl uppercase tracking-tight text-dark mb-6 leading-[0.95]">Rooted in Good Soil &amp; Good People</h2>
+        <p class="text-lg text-dark/50 mb-6 leading-relaxed">
           {{ site.title }} is a family-owned farm that has been cultivating the land and serving our community for years. What started as a small garden has grown into a beloved local farm stand where neighbors come for the freshest produce and genuine connection.
         </p>
-        <p class="text-lg text-gray-600 mb-8">
-          We believe in sustainable farming practices, treating our land with respect, and providing our community with food they can feel good about. Every item at our stand is grown or made by us — no middlemen, no long supply chains, just honest food from people who care.
+        <p class="text-lg text-dark/50 leading-relaxed">
+          We believe in sustainable farming, treating our land with respect, and providing our community with food they can feel good about. Every item at our stand is grown or made by us — no middlemen, just honest food.
         </p>
-
-        <!-- Trust Signals -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <i data-lucide="sprout" class="w-6 h-6 text-primary"></i>
-            </div>
-            <p class="font-semibold text-dark">Locally Grown</p>
-            <p class="text-sm text-gray-500">Right here in our fields</p>
-          </div>
-          <div class="text-center">
-            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <i data-lucide="heart-handshake" class="w-6 h-6 text-primary"></i>
-            </div>
-            <p class="font-semibold text-dark">Family Owned</p>
-            <p class="text-sm text-gray-500">Run with love & care</p>
-          </div>
-          <div class="text-center">
-            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <i data-lucide="leaf" class="w-6 h-6 text-primary"></i>
-            </div>
-            <p class="font-semibold text-dark">Sustainable</p>
-            <p class="text-sm text-gray-500">Responsible practices</p>
-          </div>
-        </div>
       </div>
 
       <!-- Image Placeholder -->
-      <div class="bg-gradient-to-br from-primary/10 to-secondary/20 rounded-2xl aspect-[4/3] flex items-center justify-center">
-        <div class="text-center text-gray-400">
-          <i data-lucide="image" class="w-16 h-16 mx-auto mb-4"></i>
-          <p class="text-sm">Farm photo goes here</p>
+      <div class="reveal-on-scroll">
+        <div class="bg-sage/10 border-[3px] border-dark aspect-[4/3] flex items-center justify-center relative overflow-hidden">
+          <div class="text-center relative z-10">
+            <i data-lucide="image" class="w-16 h-16 mx-auto mb-4 text-dark/20"></i>
+            <p class="text-sm text-dark/20 font-display font-bold uppercase tracking-wider">Farm photo goes here</p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="mt-16 md:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6 reveal-on-scroll">
+      <div class="bg-sage text-white border-[3px] border-dark p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-200">
+        <i data-lucide="sprout" class="w-8 h-8 mx-auto mb-4"></i>
+        <h3 class="font-display font-extrabold text-xl uppercase mb-2">Locally Grown</h3>
+        <p class="text-white/80 text-sm">Harvested from our fields, never shipped from far away. Peak freshness, always.</p>
+      </div>
+      <div class="bg-mustard text-dark border-[3px] border-dark p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-200">
+        <i data-lucide="heart-handshake" class="w-8 h-8 mx-auto mb-4"></i>
+        <h3 class="font-display font-extrabold text-xl uppercase mb-2">Family Owned</h3>
+        <p class="text-dark/70 text-sm">Every seed planted by hand, every customer treated like a neighbor.</p>
+      </div>
+      <div class="bg-coral text-white border-[3px] border-dark p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-200">
+        <i data-lucide="leaf" class="w-8 h-8 mx-auto mb-4"></i>
+        <h3 class="font-display font-extrabold text-xl uppercase mb-2">Sustainable</h3>
+        <p class="text-white/80 text-sm">Responsible practices that keep the soil healthy and the harvest bountiful.</p>
       </div>
     </div>
   </div>
