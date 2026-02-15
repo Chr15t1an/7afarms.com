@@ -1,0 +1,88 @@
+<section id="contact" class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Get in Touch</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Have a question about what's in season? Want to place a bulk order? We'd love to hear from you.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+      <div class="space-y-8">
+        <!-- Phone -->
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="phone" class="w-6 h-6 text-primary"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark mb-1">Phone</h3>
+            <a href="tel:{{ site.phone_raw }}" class="text-primary hover:text-primary-dark transition-colors">{{ site.phone }}</a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="mail" class="w-6 h-6 text-primary"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark mb-1">Email</h3>
+            <a href="mailto:{{ site.email }}" class="text-primary hover:text-primary-dark transition-colors">{{ site.email }}</a>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="map-pin" class="w-6 h-6 text-primary"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark mb-1">Location</h3>
+            <p class="text-gray-600">{{ site.address.full }}</p>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="clock" class="w-6 h-6 text-primary"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark mb-1">Hours</h3>
+            <div class="text-gray-600 space-y-1">
+              {% for h in site.hours %}
+              <p><span class="font-medium">{{ h.day }}:</span> {{ h.time }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        {% if site.social %}
+        <div class="flex items-center space-x-4 pt-4">
+          {% if site.social.facebook %}
+          <a href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer"
+             class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+             aria-label="Facebook">
+            <i data-lucide="facebook" class="w-5 h-5"></i>
+          </a>
+          {% endif %}
+          {% if site.social.instagram %}
+          <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer"
+             class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+             aria-label="Instagram">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-white rounded-xl shadow-md p-8 relative">
+        {% include contact-form.html %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+<footer class="bg-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <i data-lucide="leaf" class="w-6 h-6 text-secondary"></i>
+          <span class="text-lg font-bold">{{ site.title }}</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          {{ site.description }}
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="{{ '/' | relative_url }}" class="text-gray-400 hover:text-secondary transition-colors">Home</a></li>
+          <li><a href="{{ '/#products' | relative_url }}" class="text-gray-400 hover:text-secondary transition-colors">Products</a></li>
+          <li><a href="{{ '/about/' | relative_url }}" class="text-gray-400 hover:text-secondary transition-colors">About Us</a></li>
+          <li><a href="{{ '/#contact' | relative_url }}" class="text-gray-400 hover:text-secondary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="font-semibold mb-4">Contact Us</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li class="flex items-center space-x-2">
+            <i data-lucide="phone" class="w-4 h-4 text-secondary"></i>
+            <a href="tel:{{ site.phone_raw }}" class="hover:text-secondary transition-colors">{{ site.phone }}</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i data-lucide="mail" class="w-4 h-4 text-secondary"></i>
+            <a href="mailto:{{ site.email }}" class="hover:text-secondary transition-colors">{{ site.email }}</a>
+          </li>
+          <li class="flex items-start space-x-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-secondary mt-0.5"></i>
+            <span>{{ site.address.full }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 sm:mt-0">
+        <a href="{{ '/privacy-policy/' | relative_url }}" class="hover:text-secondary transition-colors">Privacy Policy</a>
+        <a href="{{ '/terms-of-service/' | relative_url }}" class="hover:text-secondary transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

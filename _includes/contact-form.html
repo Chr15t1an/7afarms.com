@@ -1,0 +1,116 @@
+<form id="contact-form" class="space-y-6">
+  <!-- Honeypot field (hidden from real users) -->
+  <div class="absolute -left-[9999px]" aria-hidden="true">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-dark mb-2">Your Name</label>
+      <input type="text" id="name" name="name" required
+             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+             placeholder="John Smith">
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-dark mb-2">Email Address</label>
+      <input type="email" id="email" name="email" required
+             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+             placeholder="john@example.com">
+    </div>
+  </div>
+
+  <div>
+    <label for="phone" class="block text-sm font-medium text-dark mb-2">Phone Number <span class="text-gray-400">(optional)</span></label>
+    <input type="tel" id="phone" name="phone"
+           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+           placeholder="(555) 123-4567">
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-dark mb-2">Message</label>
+    <textarea id="message" name="message" rows="4" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-y"
+              placeholder="How can we help you?"></textarea>
+  </div>
+
+  <button type="submit" id="submit-btn"
+          class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-dark transition-colors">
+    <i data-lucide="send" class="w-4 h-4"></i>
+    <span>Send Message</span>
+  </button>
+
+  <!-- Status Messages -->
+  <div id="form-status" class="hidden rounded-lg p-4 text-sm"></div>
+</form>
+
+<script>
+(function() {
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+  const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+  // Rate limiting: 1 submission per 60 seconds
+  let lastSubmit = 0;
+  const RATE_LIMIT_MS = 60000;
+
+  function showStatus(message, isError) {
+    statusEl.textContent = message;
+    statusEl.className = 'rounded-lg p-4 text-sm ' +
+      (isError ? 'bg-red-50 text-red-700 border border-red-200' : 'bg-green-50 text-green-700 border border-green-200');
+    statusEl.classList.remove('hidden');
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Honeypot check
+    if (form.querySelector('[name="website"]').value) return;
+
+    // Rate limiting
+    const now = Date.now();
+    if (now - lastSubmit < RATE_LIMIT_MS) {
+      showStatus('Please wait a moment before sending another message.', true);
+      return;
+    }
+
+    // Demo mode for local development
+    if (isLocalhost) {
+      showStatus('Demo mode: Form submission works! In production, this will send an email via SendGrid.', false);
+      lastSubmit = now;
+      return;
+    }
+
+    // Disable button
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<svg class="animate-spin w-4 h-4" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg><span>Sending...</span>';
+
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        showStatus('Thank you! Your message has been sent. We\'ll get back to you soon.', false);
+        form.reset();
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        showStatus(errorData.error || 'Something went wrong. Please call us or try again later.', true);
+      }
+    } catch (err) {
+      showStatus('Something went wrong. Please call us or try again later.', true);
+    }
+
+    lastSubmit = now;
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i><span>Send Message</span>';
+    lucide.createIcons();
+  });
+})();
+</script>

@@ -1,0 +1,53 @@
+---
+---
+
+/* Custom styles for 7A Farms */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #2d6a4f;
+  outline-offset: 2px;
+}
+
+/* Transition defaults */
+a, button {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Form input focus ring override for consistency */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.3);
+}
+
+/* Prose-like styling for content pages */
+.prose h2 {
+  margin-top: 2rem;
+}
+
+.prose p + p {
+  margin-top: 1rem;
+}
+
+.prose ul {
+  margin-top: 0.5rem;
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+  transition: max-height 0.3s ease;
+}
+
+/* Loading spinner animation (used in contact form) */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

@@ -1,0 +1,55 @@
+title: "7A Farms"
+tagline: "Fresh From Our Farm to Your Table"
+description: "7A Farms is a family-owned farm stand offering fresh, locally grown produce, seasonal specialties, and homemade goods direct from our fields to your table."
+
+url: "https://www.7afarms.com"
+baseurl: ""
+
+# Business info (update with real details)
+phone: "(555) 123-4567"
+phone_raw: "+15551234567"
+email: "hello@7afarms.com"
+address:
+  street: "1234 Country Road"
+  city: "Anytown"
+  state: "TX"
+  zip: "75000"
+  full: "1234 Country Road, Anytown, TX 75000"
+
+# Hours (update with real hours)
+hours:
+  - day: "Monday - Friday"
+    time: "8:00 AM - 6:00 PM"
+  - day: "Saturday"
+    time: "7:00 AM - 4:00 PM"
+  - day: "Sunday"
+    time: "Closed"
+
+# Social media (update with real links)
+social:
+  facebook: "https://facebook.com/7afarms"
+  instagram: "https://instagram.com/7afarms"
+
+# Google Tag Manager (set via env or replace)
+gtm_id: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - wrangler.toml
+  - node_modules
+  - vendor
+  - functions
+  - .env
+  - .env.example
