@@ -31,7 +31,7 @@ social:
   instagram: "https://instagram.com/7afarm"
 
 # Google Tag Manager (set via env or replace)
-gtm_id: ""
+gtm_id: "GTM-TN6MS4VT"
 
 # Build settings
 markdown: kramdown
