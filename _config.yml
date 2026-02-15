@@ -5,6 +5,27 @@ description: "7A Farm is a family-owned farm stand offering fresh, locally grown
 url: "https://www.7afarm.com"
 baseurl: ""
 
+# SEO & Social
+author: "7A Farm"
+logo: /assets/images/logo.svg
+social:
+  name: "7A Farm"
+  links:
+    - https://facebook.com/7afarm
+    - https://instagram.com/7afarm
+  facebook: "https://facebook.com/7afarm"
+  instagram: "https://instagram.com/7afarm"
+image: /assets/images/og-image.jpg
+locale: en_US
+timezone: America/Chicago
+
+# Default OG image for all pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-image.jpg
+
 # Business info (update with real details)
 phone: "(555) 123-4567"
 phone_raw: "+15551234567"
@@ -16,19 +37,21 @@ address:
   zip: "64101"
   full: "1234 Country Road, Kansas City, MO 64101"
 
+# Geo coordinates (update with real location)
+geo:
+  latitude: "39.0997"
+  longitude: "-94.5786"
+
 # Hours (update with real hours)
 hours:
   - day: "Monday - Friday"
     time: "8:00 AM - 6:00 PM"
+    schema: "Mo-Fr 08:00-18:00"
   - day: "Saturday"
     time: "7:00 AM - 4:00 PM"
+    schema: "Sa 07:00-16:00"
   - day: "Sunday"
     time: "Closed"
-
-# Social media (update with real links)
-social:
-  facebook: "https://facebook.com/7afarm"
-  instagram: "https://instagram.com/7afarm"
 
 # Google Tag Manager (set via env or replace)
 gtm_id: "GTM-TN6MS4VT"

@@ -1,5 +1,9 @@
 name = "7afarm-com"
 compatibility_date = "2024-01-01"
+pages_build_output_dir = "_site"
+
+[vars]
+JEKYLL_ENV = "production"
 
 [site]
 bucket = "./_site"

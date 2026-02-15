@@ -1,9 +1,21 @@
+// Allowed origins for CORS
+const ALLOWED_ORIGINS = [
+  'https://www.7afarm.com',
+  'https://7afarm.com',
+  'https://7afarm-com.pages.dev',
+];
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
+  // Origin check
+  const origin = request.headers.get('Origin') || '';
+  const isLocalhost = origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1');
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) || isLocalhost ? origin : ALLOWED_ORIGINS[0];
+
   // CORS headers
   const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': allowedOrigin,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   };
@@ -11,6 +23,14 @@ export async function onRequestPost(context) {
   // Handle preflight
   if (request.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Referer/Origin validation — reject requests with no origin from non-localhost
+  if (!origin && !isLocalhost) {
+    return new Response(
+      JSON.stringify({ error: 'Forbidden' }),
+      { status: 403, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+    );
   }
 
   try {
